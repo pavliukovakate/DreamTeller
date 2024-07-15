@@ -7,14 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B75179702C458DFA00A20A76 /* StoryPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */; };
+		B754003B2C3F0A7E00637EEB /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */; };
+		B754003D2C3F2F4D00637EEB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B754003C2C3F2F4D00637EEB /* Colors.xcassets */; };
+		B77871562C455513008D5685 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77871542C455513008D5685 /* Assets+Generated.swift */; };
 		B7939BE42C3DCE960092DD6F /* DreamTellerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */; };
 		B7939BE62C3DCE960092DD6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE52C3DCE960092DD6F /* ContentView.swift */; };
-		B7939BE82C3DCE960092DD6F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE72C3DCE960092DD6F /* Item.swift */; };
+		B7939BE82C3DCE960092DD6F /* Story.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE72C3DCE960092DD6F /* Story.swift */; };
 		B7939BEA2C3DCE980092DD6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7939BE92C3DCE980092DD6F /* Assets.xcassets */; };
 		B7939BED2C3DCE980092DD6F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7939BEC2C3DCE980092DD6F /* Preview Assets.xcassets */; };
 		B7939BF72C3DCE980092DD6F /* DreamTellerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BF62C3DCE980092DD6F /* DreamTellerTests.swift */; };
 		B7939C012C3DCE980092DD6F /* DreamTellerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C002C3DCE980092DD6F /* DreamTellerUITests.swift */; };
 		B7939C032C3DCE980092DD6F /* DreamTellerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C022C3DCE980092DD6F /* DreamTellerUITestsLaunchTests.swift */; };
+		B7939C102C3DD0FE0092DD6F /* ColorScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C0F2C3DD0FE0092DD6F /* ColorScheme.swift */; };
+		B7939C142C3DEBFC0092DD6F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C132C3DEBFC0092DD6F /* MainView.swift */; };
+		B7939C162C3DEDC00092DD6F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C152C3DEDC00092DD6F /* HomeView.swift */; };
+		B7939C182C3DEDD50092DD6F /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C172C3DEDD50092DD6F /* CatalogView.swift */; };
+		B7939C1A2C3DEDE90092DD6F /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C192C3DEDE90092DD6F /* FavoritesView.swift */; };
+		B7939C1C2C3DEDF90092DD6F /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C1B2C3DEDF90092DD6F /* ProfileView.swift */; };
+		B7939C1E2C3DEE090092DD6F /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C1D2C3DEE090092DD6F /* LearningView.swift */; };
+		B7939C202C3EDA5E0092DD6F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C1F2C3EDA5E0092DD6F /* User.swift */; };
+		B7939C222C3EE9F10092DD6F /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C212C3EE9F10092DD6F /* FavoritesService.swift */; };
+		B7939C242C3EEA160092DD6F /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C232C3EEA160092DD6F /* StoryViewModel.swift */; };
+		B7939C262C3EEA440092DD6F /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C252C3EEA440092DD6F /* StoryService.swift */; };
+		B7A09F082C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7A09F072C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPlayerView.swift; sourceTree = "<group>"; };
+		B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		B754003C2C3F2F4D00637EEB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B77871542C455513008D5685 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
 		B7939BE02C3DCE960092DD6F /* DreamTeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamTeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamTellerApp.swift; sourceTree = "<group>"; };
 		B7939BE52C3DCE960092DD6F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		B7939BE72C3DCE960092DD6F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B7939BE72C3DCE960092DD6F /* Story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Story.swift; sourceTree = "<group>"; };
 		B7939BE92C3DCE980092DD6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B7939BEC2C3DCE980092DD6F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B7939BF22C3DCE980092DD6F /* DreamTellerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamTellerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +66,18 @@
 		B7939BFC2C3DCE980092DD6F /* DreamTellerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DreamTellerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7939C002C3DCE980092DD6F /* DreamTellerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamTellerUITests.swift; sourceTree = "<group>"; };
 		B7939C022C3DCE980092DD6F /* DreamTellerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamTellerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B7939C0F2C3DD0FE0092DD6F /* ColorScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorScheme.swift; sourceTree = "<group>"; };
+		B7939C132C3DEBFC0092DD6F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		B7939C152C3DEDC00092DD6F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B7939C172C3DEDD50092DD6F /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		B7939C192C3DEDE90092DD6F /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		B7939C1B2C3DEDF90092DD6F /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		B7939C1D2C3DEE090092DD6F /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
+		B7939C1F2C3EDA5E0092DD6F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B7939C212C3EE9F10092DD6F /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
+		B7939C232C3EEA160092DD6F /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
+		B7939C252C3EEA440092DD6F /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
+		B7A09F072C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Adventures of Little Bruno in the Forest.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +105,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B75400442C3F34C600637EEB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7A09F072C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 */,
+				B7939BE92C3DCE980092DD6F /* Assets.xcassets */,
+				B754003C2C3F2F4D00637EEB /* Colors.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B77871552C455513008D5685 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				B77871542C455513008D5685 /* Assets+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		B7939BD72C3DCE960092DD6F = {
 			isa = PBXGroup;
 			children = (
@@ -98,8 +148,22 @@
 			children = (
 				B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */,
 				B7939BE52C3DCE960092DD6F /* ContentView.swift */,
-				B7939BE72C3DCE960092DD6F /* Item.swift */,
-				B7939BE92C3DCE980092DD6F /* Assets.xcassets */,
+				B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */,
+				B7939C132C3DEBFC0092DD6F /* MainView.swift */,
+				B7939C152C3DEDC00092DD6F /* HomeView.swift */,
+				B7939C172C3DEDD50092DD6F /* CatalogView.swift */,
+				B7939C192C3DEDE90092DD6F /* FavoritesView.swift */,
+				B7939C1B2C3DEDF90092DD6F /* ProfileView.swift */,
+				B7939C1D2C3DEE090092DD6F /* LearningView.swift */,
+				B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */,
+				B7939C0F2C3DD0FE0092DD6F /* ColorScheme.swift */,
+				B7939BE72C3DCE960092DD6F /* Story.swift */,
+				B7939C232C3EEA160092DD6F /* StoryViewModel.swift */,
+				B7939C212C3EE9F10092DD6F /* FavoritesService.swift */,
+				B7939C252C3EEA440092DD6F /* StoryService.swift */,
+				B7939C1F2C3EDA5E0092DD6F /* User.swift */,
+				B77871552C455513008D5685 /* Generated */,
+				B75400442C3F34C600637EEB /* Resources */,
 				B7939BEB2C3DCE980092DD6F /* Preview Content */,
 			);
 			path = DreamTeller;
@@ -218,6 +282,9 @@
 				Base,
 			);
 			mainGroup = B7939BD72C3DCE960092DD6F;
+			packageReferences = (
+				B75400462C3FE9E200637EEB /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */,
+			);
 			productRefGroup = B7939BE12C3DCE960092DD6F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +301,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7A09F082C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 in Resources */,
+				B754003D2C3F2F4D00637EEB /* Colors.xcassets in Resources */,
 				B7939BED2C3DCE980092DD6F /* Preview Assets.xcassets in Resources */,
 				B7939BEA2C3DCE980092DD6F /* Assets.xcassets in Resources */,
 			);
@@ -260,9 +329,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7939C102C3DD0FE0092DD6F /* ColorScheme.swift in Sources */,
+				B7939C162C3DEDC00092DD6F /* HomeView.swift in Sources */,
+				B7939C1C2C3DEDF90092DD6F /* ProfileView.swift in Sources */,
+				B7939C182C3DEDD50092DD6F /* CatalogView.swift in Sources */,
+				B7939C142C3DEBFC0092DD6F /* MainView.swift in Sources */,
+				B7939C1E2C3DEE090092DD6F /* LearningView.swift in Sources */,
+				B75179702C458DFA00A20A76 /* StoryPlayerView.swift in Sources */,
+				B7939C242C3EEA160092DD6F /* StoryViewModel.swift in Sources */,
 				B7939BE62C3DCE960092DD6F /* ContentView.swift in Sources */,
-				B7939BE82C3DCE960092DD6F /* Item.swift in Sources */,
+				B7939BE82C3DCE960092DD6F /* Story.swift in Sources */,
+				B7939C202C3EDA5E0092DD6F /* User.swift in Sources */,
+				B754003B2C3F0A7E00637EEB /* AppConfiguration.swift in Sources */,
+				B7939C262C3EEA440092DD6F /* StoryService.swift in Sources */,
 				B7939BE42C3DCE960092DD6F /* DreamTellerApp.swift in Sources */,
+				B7939C222C3EE9F10092DD6F /* FavoritesService.swift in Sources */,
+				B77871562C455513008D5685 /* Assets+Generated.swift in Sources */,
+				B7939C1A2C3DEDE90092DD6F /* FavoritesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +675,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B75400462C3FE9E200637EEB /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftGen/SwiftGenPlugin";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B7939BD82C3DCE960092DD6F /* Project object */;
 }

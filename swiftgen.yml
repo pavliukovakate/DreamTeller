@@ -1,0 +1,9 @@
+input_dir: DreamTeller/Resources
+output_dir: DreamTeller/Generated/
+xcassets:
+  - inputs: Colors.xcassets
+    outputs:
+      - templateName: swift5
+        output: Assets+Generated.swift
+        
+#cd /Users/katerynapavliukova/Developer/DreamTeller
