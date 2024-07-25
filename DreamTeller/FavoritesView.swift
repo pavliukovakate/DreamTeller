@@ -7,12 +7,14 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct FavoritesView: View {
     @EnvironmentObject var appConfig: AppConfiguration
-    @StateObject private var viewModel = StoryViewModel(storyService: MockStoryService())
-
+    @StateObject private var viewModel: StoryViewModel
+    
+    init() {
+        let viewModel = container.resolve(StoryViewModel.self)!
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
     var body: some View {
         NavigationView {
             VStack {
@@ -29,7 +31,7 @@ struct FavoritesView: View {
                         } label: {
                             Label("Age Group: \(viewModel.selectedAgeGroup.rawValue)", systemImage: "line.horizontal.3.decrease.circle")
                                 .padding()
-                                .background(appConfig.colorStyle.colorSet.accentColor.opacity(0.2))
+                                .background(appConfig.colorStyle.colorSet.accent.opacity(0.2))
                                 .cornerRadius(8)
                         }
                         Menu {
@@ -43,36 +45,17 @@ struct FavoritesView: View {
                         } label: {
                             Label("Category: \(viewModel.selectedCategory.rawValue)", systemImage: "line.horizontal.3.decrease.circle")
                                 .padding()
-                                .background(appConfig.colorStyle.colorSet.accentColor.opacity(0.2))
+                                .background(appConfig.colorStyle.colorSet.accent.opacity(0.2))
                                 .cornerRadius(8)
                         }
                     }
                     .padding(.horizontal)
                 }
-
+                
                 ScrollView {
                     LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 20) {
                         ForEach(viewModel.filteredStories.filter { $0.isFavorite }) { story in
-                            VStack {
-                                ZStack(alignment: .topTrailing) {
-                                    Image(story.imageName)
-                                        .resizable()
-                                        .scaledToFit()
-                                        .frame(height: 150)
-                                        .cornerRadius(12)
-                                    
-                                    Button(action: {
-                                        viewModel.toggleFavorite(for: story)
-                                    }) {
-                                        Image(systemName: story.isFavorite ? "heart.fill" : "heart")
-                                            .foregroundColor(story.isFavorite ? appConfig.colorStyle.colorSet.iconColor : appConfig.colorStyle.colorSet.textColor)
-                                            .padding(8)
-                                    }
-                                }
-                                Text(story.title)
-                                    .font(.caption)
-                                    .foregroundColor(appConfig.colorStyle.colorSet.textColor)
-                            }
+                            StoryCell(story: story, toggleFavorite: { viewModel.toggleFavorite(for: story) })
                         }
                     }
                     .padding()
@@ -88,7 +71,7 @@ struct FavoritesView: View {
                         }) {
                             Image(systemName: viewModel.showFilters ? "chevron.up.circle" : "chevron.down.circle")
                                 .imageScale(.large)
-                                .foregroundColor(appConfig.colorStyle.colorSet.textColor)
+                                .foregroundColor(appConfig.colorStyle.colorSet.primaryText)
                         }
                     }
                 }

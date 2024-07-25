@@ -8,43 +8,75 @@
 import Foundation
 import SwiftUI
 
-enum ColorStyle {
+struct ColorSet {
+    var background: Color
+    var primaryText: Color
+    var secondaryText: Color
+    var accent: Color
+    var highlight: Color
+    var buttonBackground: Color
+    var buttonTextColor: Color
+}
+
+enum ColorPalette {
     case pastel
     case earthTones
     case freshAndBright
+    case fairyTale
+    case marine  // Добавляем новую палитру
 
     var colorSet: ColorSet {
         switch self {
         case .pastel:
             return ColorSet(
-                backgroundColor: Asset.Colors.pastelBackground.swiftUIColor,
-                accentColor: Asset.Colors.pastelAccent.swiftUIColor,
-                iconColor: Asset.Colors.pastelIcon.swiftUIColor,
-                textColor:  Asset.Colors.pastelText.swiftUIColor
+                background: Color("adaptivePastelBackground"),
+                primaryText: Color("adaptivePastelPrimaryText"),
+                secondaryText: Color("adaptivePastelSecondaryText"),
+                accent: Color("adaptivePastelAccentColor"),
+                highlight: Color("adaptivePastelHighlightColor"),
+                buttonBackground: Color("adaptivePastelButtonBackground"),
+                buttonTextColor: Color("adaptivePastelButtonTextColor")
             )
-        
         case .earthTones:
             return ColorSet(
-                backgroundColor: Color(red: 237/255, green: 224/255, blue: 212/255),
-                accentColor: Color(red: 154/255, green: 97/255, blue: 109/255),
-                iconColor: Color(red: 218/255, green: 165/255, blue: 32/255),
-                textColor: Color(red: 92/255, green: 58/255, blue: 0/255)
+                background: Color("adaptiveEarthTonesBackground"),
+                primaryText: Color("adaptiveEarthTonesPrimaryText"),
+                secondaryText: Color("adaptiveEarthTonesSecondaryText"),
+                accent: Color("adaptiveEarthTonesAccentColor"),
+                highlight: Color("adaptiveEarthTonesHighlightColor"),
+                buttonBackground: Color("adaptiveEarthTonesButtonBackground"),
+                buttonTextColor: Color("adaptiveEarthTonesButtonTextColor")
             )
-        
         case .freshAndBright:
             return ColorSet(
-                backgroundColor: Color(red: 181/255, green: 234/255, blue: 215/255),
-                accentColor: Color(red: 86/255, green: 180/255, blue: 233/255),
-                iconColor: Color(red: 247/255, green: 240/255, blue: 82/255),
-                textColor: Color(red: 65/255, green: 74/255, blue: 76/255)
+                background: Color("adaptiveFreshAndBrightBackground"),
+                primaryText: Color("adaptiveFreshAndBrightPrimaryText"),
+                secondaryText: Color("adaptiveFreshAndBrightSecondaryText"),
+                accent: Color("adaptiveFreshAndBrightAccentColor"),
+                highlight: Color("adaptiveFreshAndBrightHighlightColor"),
+                buttonBackground: Color("adaptiveFreshAndBrightButtonBackground"),
+                buttonTextColor: Color("adaptiveFreshAndBrightButtonTextColor")
+            )
+        case .fairyTale:
+            return ColorSet(
+                background: Color("adaptiveFairyTaleBackground"),
+                primaryText: Color("adaptiveFairyTalePrimaryText"),
+                secondaryText: Color("adaptiveFairyTaleSecondaryText"),
+                accent: Color("adaptiveFairyTaleAccentColor"),
+                highlight: Color("adaptiveFairyTaleHighlightColor"),
+                buttonBackground: Color("adaptiveFairyTaleButtonBackground"),
+                buttonTextColor: Color("adaptiveFairyTaleButtonTextColor")
+            )
+        case .marine:
+            return ColorSet(
+                background: Color("adaptiveMarineBackground"),
+                primaryText: Color("adaptiveMarinePrimaryText"),
+                secondaryText: Color("adaptiveMarineSecondaryText"),
+                accent: Color("adaptiveMarineAccentColor"),
+                highlight: Color("adaptiveMarineHighlightColor"),
+                buttonBackground: Color("adaptiveMarineButtonBackground"),
+                buttonTextColor: Color("adaptiveMarineButtonTextColor")
             )
         }
     }
-}
-
-struct ColorSet {
-    let backgroundColor: Color
-    let accentColor: Color
-    let iconColor: Color
-    let textColor: Color
 }

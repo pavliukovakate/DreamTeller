@@ -11,6 +11,7 @@ import Combine
 @main
 struct DreamTellerApp: App {
     @StateObject private var appConfig = AppConfiguration()
+
     var body: some Scene {
         
         WindowGroup {

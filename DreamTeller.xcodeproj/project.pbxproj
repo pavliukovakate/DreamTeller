@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		B75179702C458DFA00A20A76 /* StoryPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */; };
+		B75179722C45C1DB00A20A76 /* StoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75179712C45C1DB00A20A76 /* StoryListView.swift */; };
+		B75179742C45C2A200A20A76 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75179732C45C2A200A20A76 /* StoryCell.swift */; };
+		B75179B02C4840E400A20A76 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75179AF2C4840E400A20A76 /* HomeViewModel.swift */; };
 		B754003B2C3F0A7E00637EEB /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */; };
 		B754003D2C3F2F4D00637EEB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B754003C2C3F2F4D00637EEB /* Colors.xcassets */; };
+		B75531CA2C516BC700477937 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B75531C92C516BC700477937 /* Swinject */; };
+		B75531CC2C516BE100477937 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75531CB2C516BE100477937 /* Container.swift */; };
 		B77871562C455513008D5685 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77871542C455513008D5685 /* Assets+Generated.swift */; };
 		B7939BE42C3DCE960092DD6F /* DreamTellerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */; };
 		B7939BE62C3DCE960092DD6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE52C3DCE960092DD6F /* ContentView.swift */; };
@@ -52,8 +57,12 @@
 
 /* Begin PBXFileReference section */
 		B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPlayerView.swift; sourceTree = "<group>"; };
+		B75179712C45C1DB00A20A76 /* StoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListView.swift; sourceTree = "<group>"; };
+		B75179732C45C2A200A20A76 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
+		B75179AF2C4840E400A20A76 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		B754003C2C3F2F4D00637EEB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		B75531CB2C516BE100477937 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		B77871542C455513008D5685 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
 		B7939BE02C3DCE960092DD6F /* DreamTeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamTeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamTellerApp.swift; sourceTree = "<group>"; };
@@ -85,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B75531CA2C516BC700477937 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,18 +157,22 @@
 			isa = PBXGroup;
 			children = (
 				B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */,
+				B75531CB2C516BE100477937 /* Container.swift */,
 				B7939BE52C3DCE960092DD6F /* ContentView.swift */,
 				B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */,
 				B7939C132C3DEBFC0092DD6F /* MainView.swift */,
 				B7939C152C3DEDC00092DD6F /* HomeView.swift */,
+				B75179AF2C4840E400A20A76 /* HomeViewModel.swift */,
 				B7939C172C3DEDD50092DD6F /* CatalogView.swift */,
+				B7939C232C3EEA160092DD6F /* StoryViewModel.swift */,
 				B7939C192C3DEDE90092DD6F /* FavoritesView.swift */,
 				B7939C1B2C3DEDF90092DD6F /* ProfileView.swift */,
 				B7939C1D2C3DEE090092DD6F /* LearningView.swift */,
 				B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */,
 				B7939C0F2C3DD0FE0092DD6F /* ColorScheme.swift */,
 				B7939BE72C3DCE960092DD6F /* Story.swift */,
-				B7939C232C3EEA160092DD6F /* StoryViewModel.swift */,
+				B75179712C45C1DB00A20A76 /* StoryListView.swift */,
+				B75179732C45C2A200A20A76 /* StoryCell.swift */,
 				B7939C212C3EE9F10092DD6F /* FavoritesService.swift */,
 				B7939C252C3EEA440092DD6F /* StoryService.swift */,
 				B7939C1F2C3EDA5E0092DD6F /* User.swift */,
@@ -210,6 +224,9 @@
 			dependencies = (
 			);
 			name = DreamTeller;
+			packageProductDependencies = (
+				B75531C92C516BC700477937 /* Swinject */,
+			);
 			productName = DreamTeller;
 			productReference = B7939BE02C3DCE960092DD6F /* DreamTeller.app */;
 			productType = "com.apple.product-type.application";
@@ -284,6 +301,7 @@
 			mainGroup = B7939BD72C3DCE960092DD6F;
 			packageReferences = (
 				B75400462C3FE9E200637EEB /* XCRemoteSwiftPackageReference "SwiftGenPlugin" */,
+				B75531C82C516BC700477937 /* XCRemoteSwiftPackageReference "Swinject" */,
 			);
 			productRefGroup = B7939BE12C3DCE960092DD6F /* Products */;
 			projectDirPath = "";
@@ -331,15 +349,19 @@
 			files = (
 				B7939C102C3DD0FE0092DD6F /* ColorScheme.swift in Sources */,
 				B7939C162C3DEDC00092DD6F /* HomeView.swift in Sources */,
+				B75179722C45C1DB00A20A76 /* StoryListView.swift in Sources */,
+				B75179B02C4840E400A20A76 /* HomeViewModel.swift in Sources */,
 				B7939C1C2C3DEDF90092DD6F /* ProfileView.swift in Sources */,
 				B7939C182C3DEDD50092DD6F /* CatalogView.swift in Sources */,
 				B7939C142C3DEBFC0092DD6F /* MainView.swift in Sources */,
 				B7939C1E2C3DEE090092DD6F /* LearningView.swift in Sources */,
 				B75179702C458DFA00A20A76 /* StoryPlayerView.swift in Sources */,
+				B75531CC2C516BE100477937 /* Container.swift in Sources */,
 				B7939C242C3EEA160092DD6F /* StoryViewModel.swift in Sources */,
 				B7939BE62C3DCE960092DD6F /* ContentView.swift in Sources */,
 				B7939BE82C3DCE960092DD6F /* Story.swift in Sources */,
 				B7939C202C3EDA5E0092DD6F /* User.swift in Sources */,
+				B75179742C45C2A200A20A76 /* StoryCell.swift in Sources */,
 				B754003B2C3F0A7E00637EEB /* AppConfiguration.swift in Sources */,
 				B7939C262C3EEA440092DD6F /* StoryService.swift in Sources */,
 				B7939BE42C3DCE960092DD6F /* DreamTellerApp.swift in Sources */,
@@ -685,7 +707,23 @@
 				minimumVersion = 6.6.2;
 			};
 		};
+		B75531C82C516BC700477937 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B75531C92C516BC700477937 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B75531C82C516BC700477937 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B7939BD82C3DCE960092DD6F /* Project object */;
 }

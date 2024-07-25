@@ -10,5 +10,5 @@ import Combine
 import SwiftUI
 
 class AppConfiguration: ObservableObject {
-    @Published var colorStyle: ColorStyle = .pastel
+    @Published var colorStyle: ColorPalette = .fairyTale
 }

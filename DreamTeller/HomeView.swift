@@ -1,112 +1,75 @@
-//
-//  HomeView.swift
-//  DreamTeller
-//
-//  Created by Kateryna Pavliukova on 10.07.2024.
-//
-
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var appConfig: AppConfiguration
-
+    @StateObject private var viewModel: HomeViewModel
+    
+    init() {
+        let viewModel = container.resolve(HomeViewModel.self)!
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
-        let currentColorSet = appConfig.colorStyle.colorSet
-
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading, spacing: 20) {
-                    // Обзор новинок
-                    Section(header: Text("Новинки")
-                                .font(.headline)
-                                .padding(.leading)) {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(0..<10) { _ in
-                                    StoryCard(title: "Сказка")
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
+                   
+                    if !viewModel.newStories.isEmpty {
+                        SectionView(title: "New Stories", stories: viewModel.newStories, toggleFavorite: { story in
+                            viewModel.toggleFavorite(for: story)
+                            print("Toggle story: \(story)")
+                        })
                     }
-
-                    // Избранное
-                    Section(header: Text("Избранное")
-                                .font(.headline)
-                                .padding(.leading)) {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(0..<5) { _ in
-                                    StoryCard(title: "Любимая сказка")
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
+                    
+                    if !viewModel.recommendedStories.isEmpty {
+                        SectionView(title: "Recommended Stories", stories: viewModel.recommendedStories, toggleFavorite: { story in
+                            viewModel.toggleFavorite(for: story)
+                            print("Toggle story: \(story)")
+                        })
                     }
-
-                    // Рекомендации
-                    Section(header: Text("Рекомендации")
-                                .font(.headline)
-                                .padding(.leading)) {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(0..<5) { _ in
-                                    StoryCard(title: "Рекомендуемая сказка")
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
-                    }
-
-                    // Недавно прослушанные
-                    Section(header: Text("Недавно прослушанные")
-                                .font(.headline)
-                                .padding(.leading)) {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(0..<5) { _ in
-                                    StoryCard(title: "Недавняя сказка")
-                                }
-                            }
-                            .padding(.horizontal)
-                        }
+                    
+                    if !viewModel.recentStories.isEmpty {
+                        SectionView(title: "Recent Stories", stories: viewModel.recentStories, toggleFavorite: { story in
+                            viewModel.toggleFavorite(for: story)
+                            print("Toggle story: \(story)")
+                        })
                     }
                 }
+                .padding()
             }
-            .navigationTitle("Аудиосказки")
+            .navigationTitle("Home")
         }
-        
+       
     }
 }
 
-struct StoryCard: View {
-    var title: String
-    
+struct SectionView: View {
+    let title: String
+    let stories: [Story]
+    let toggleFavorite: (Story) -> Void
+
     var body: some View {
-        VStack {
-            Rectangle()
-                .fill(Color(.gray))
-                .frame(width: 120, height: 120)
-                .cornerRadius(12)
+        VStack(alignment: .leading) {
             Text(title)
-                .font(.caption)
+                .font(.headline)
+                .padding(.leading, 10)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 15) {
+                    ForEach(stories) { story in
+                        StoryCell(story: story, toggleFavorite: {
+                            toggleFavorite(story)
+                        })
+                    }
+                }
+                .padding(.leading, 10)
+            }
         }
-        .frame(width: 120, height: 160)
-    }
-}
-
-struct SearchAndFilterView: View {
-    var body: some View {
-        TextField("Поиск сказок...", text: .constant(""))
-            .textFieldStyle(RoundedBorderTextFieldStyle())
-            .padding(.vertical)
     }
 }
 
 
-
-#Preview {
-    HomeView()
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView().environmentObject(AppConfiguration())
+    }
 }
-
-

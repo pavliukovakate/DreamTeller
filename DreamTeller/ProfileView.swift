@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ProfileView: View {
     @StateObject private var viewModel = ProfileViewModel()
-    
+    @EnvironmentObject var appConfig: AppConfiguration
+
     var body: some View {
+        let currentColorSet = appConfig.colorStyle.colorSet
+
         NavigationView {
             VStack {
                 VStack {
@@ -31,6 +34,7 @@ struct ProfileView: View {
                         .foregroundColor(.gray)
                 }
                 .padding()
+                
                 
                 Form {
                     Section(header: Text("Настройки")) {
@@ -68,7 +72,9 @@ struct ProfileView: View {
                         }
                     }
                 }
+                .scrollContentBackground(.hidden)
             }
+            .background(currentColorSet.background)
             .navigationTitle("Профиль")
         }
     }

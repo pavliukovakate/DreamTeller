@@ -10,10 +10,10 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var appConfig: AppConfiguration
 
-
     var body: some View {
         MainView()
             .environmentObject(appConfig)
+
     }
 
    

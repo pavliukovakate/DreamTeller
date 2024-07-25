@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Story: Identifiable, Codable {
+struct Story: Identifiable, Codable, Hashable {
     let id: UUID
     let title: String
     let audio: String
@@ -27,22 +27,37 @@ struct Story: Identifiable, Codable {
     }
 }
 
-enum AgeGroup: String, CaseIterable, Identifiable, Codable {
+enum AgeGroup: String, CaseIterable, Codable {
     case all = "All"
     case zeroToTwo = "0-2"
     case threeToFive = "3-5"
     case sixToEight = "6-8"
 
+}
+extension AgeGroup: TitlePresentable {
+    var title: String {
+        return rawValue
+    }
+}
+extension AgeGroup: Identifiable {
     var id: String { self.rawValue }
 }
 
-enum Category: String, CaseIterable, Identifiable, Codable {
+enum Category: String, CaseIterable, Codable {
     case all = "All"
     case fantasy = "Fantasy"
     case adventure = "Adventure"
     case mystery = "Mystery"
     case science = "Science"
     case historical = "Historical"
-
+}
+    
+extension Category: Identifiable {
     var id: String { self.rawValue }
+}
+
+extension Category: TitlePresentable {
+    var title: String {
+        return rawValue
+    }
 }

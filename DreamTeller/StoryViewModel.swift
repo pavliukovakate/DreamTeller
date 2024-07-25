@@ -6,56 +6,62 @@
 //
 
 import SwiftUI
+import Foundation
 import Combine
 
+@Observable
 class StoryViewModel: ObservableObject {
-    @Published var stories: [Story] = []
-    @Published var selectedAgeGroup: AgeGroup = .all
-    @Published var selectedCategory: Category = .all
-    @Published var showFilters = false
-    @State var searchText = ""
+    var stories: [Story] = []
+    var selectedAgeGroup: AgeGroup = .all
+    var selectedCategory: Category = .all
+    var showFilters = false
+    var selectedStory: Story? = nil
+    var searchText = ""
 
-    private var cancellables = Set<AnyCancellable>()
     private var storyService: StoryService
-    private let favoritesService = FavoritesService()
-    private var favoriteStoryIDs: [UUID] = []
+    private var favoritesService: FavoritesService
+    private var cancellables = Set<AnyCancellable>()
 
-    init(storyService: StoryService) {
+    init(storyService: StoryService, favoritesService: FavoritesService) {
         self.storyService = storyService
-        loadStories()
-        loadFavoriteStories()
+        self.favoritesService = favoritesService
+        setupBindings()
+        Task {
+            await loadStories()
+        }
     }
-
-    func loadStories() {
-        storyService.fetchStories()
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .failure(let error):
-                    print("Error fetching stories: \(error)")
-                case .finished:
-                    break
-                }
-            }, receiveValue: { [weak self] stories in
-                self?.stories = stories
+    
+    private func setupBindings() {
+        favoritesService.$favoriteStoryIDs
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
                 self?.applyFavorites()
-            })
+            }
             .store(in: &cancellables)
     }
-
-    func loadFavoriteStories() {
-        favoriteStoryIDs = favoritesService.loadFavoriteStories()
+    
+    @MainActor
+    func loadStories() async {
+        do {
+            let fetchedStories = try await storyService.fetchStories()
+            stories = fetchedStories
+            applyFavorites()
+        } catch {
+            print("Error fetching stories: \(error)")
+        }
     }
 
-    func applyFavorites() {
+    private func applyFavorites() {
         for i in 0..<stories.count {
-            stories[i].isFavorite = favoriteStoryIDs.contains(stories[i].id)
+            stories[i].isFavorite = favoritesService.isFavorite(stories[i])
         }
     }
 
     var filteredStories: [Story] {
         stories.filter { story in
             (selectedAgeGroup == .all || story.ageGroup == selectedAgeGroup) &&
-            (selectedCategory == .all || story.category == selectedCategory)
+            (selectedCategory == .all || story.category == selectedCategory) &&
+            (searchText.isEmpty || story.title.localizedCaseInsensitiveContains(searchText))
         }
     }
 
@@ -68,14 +74,10 @@ class StoryViewModel: ObservableObject {
     }
 
     func toggleFavorite(for story: Story) {
-        if let index = stories.firstIndex(where: { $0.id == story.id }) {
-            stories[index].isFavorite.toggle()
-            if stories[index].isFavorite {
-                favoriteStoryIDs.append(stories[index].id)
-            } else {
-                favoriteStoryIDs.removeAll { $0 == stories[index].id }
-            }
-            favoritesService.saveFavoriteStories(favoriteStoryIDs)
-        }
+        favoritesService.toggleFavorite(story)
+    }
+
+    func selectStory(_ story: Story) {
+        selectedStory = story
     }
 }
