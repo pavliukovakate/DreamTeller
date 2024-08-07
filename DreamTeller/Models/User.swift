@@ -11,7 +11,7 @@ struct User: Identifiable {
     let id = UUID()
     var name: String
     var email: String
-    var avatar: String // Имя изображения аватара пользователя
+    var avatar: String
 }
 
 struct ListeningHistory: Identifiable {
@@ -19,4 +19,3 @@ struct ListeningHistory: Identifiable {
     var storyTitle: String
     var dateListened: Date
 }
-

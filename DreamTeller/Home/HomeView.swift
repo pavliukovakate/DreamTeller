@@ -9,9 +9,9 @@ struct HomeView: View {
     }
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
+                LazyVStack(alignment: .leading, spacing: 20) {
                    
                     if !viewModel.newStories.isEmpty {
                         SectionView(title: "New Stories", stories: viewModel.newStories, toggleFavorite: { story in
@@ -56,9 +56,11 @@ struct SectionView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 15) {
                     ForEach(stories) { story in
-                        StoryCell(story: story, toggleFavorite: {
-                            toggleFavorite(story)
-                        })
+                        NavigationLink(destination: StoryPlayerView(story: story)) {
+                            StoryCell(story: story, toggleFavorite: {
+                                toggleFavorite(story)
+                            })
+                        }
                     }
                 }
                 .padding(.leading, 10)
@@ -67,9 +69,7 @@ struct SectionView: View {
     }
 }
 
-
-struct HomeView_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeView().environmentObject(AppConfiguration())
-    }
+#Preview {
+    HomeView().environmentObject(AppConfiguration())
 }
+

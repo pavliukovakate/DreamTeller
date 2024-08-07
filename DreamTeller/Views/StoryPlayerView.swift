@@ -10,6 +10,7 @@ import AVFoundation
 
 struct StoryPlayerView: View {
     let story: Story
+    
     @State private var isPlaying: Bool = false
     @State private var player: AVAudioPlayer?
     @State private var progress: Double = 0.0
@@ -46,14 +47,14 @@ struct StoryPlayerView: View {
             }
         }
         .onAppear {
-            self.setupAudio()
+            setupAudio()
         }
         .onDisappear {
-            self.stopAudio()
+            stopAudio()
         }
     }
 
-    func setupAudio() {
+   private func setupAudio() {
         guard let path = Bundle.main.path(forResource: story.audio, ofType: "mp3") else { return }
         let url = URL(fileURLWithPath: path)
         do {
@@ -64,46 +65,47 @@ struct StoryPlayerView: View {
         }
     }
 
-    func playAudio() {
+    private func playAudio() {
         player?.play()
         isPlaying = true
         startTimer()
     }
 
-    func pauseAudio() {
+    private func pauseAudio() {
         player?.pause()
         isPlaying = false
         stopTimer()
     }
 
-    func stopAudio() {
+    private func stopAudio() {
         player?.stop()
         isPlaying = false
         stopTimer()
         progress = 0.0
     }
 
-    func startTimer() {
+    private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { _ in
             guard let player = self.player else { return }
             self.progress = player.currentTime / player.duration
         }
     }
 
-    func stopTimer() {
+    private func stopTimer() {
         timer?.invalidate()
         timer = nil
     }
 }
 
-struct StoryPlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        StoryPlayerView(story: Story(title: "Cinderella",
-                                     audio: "The Adventures of Little Bruno in the Forest",
-                                     imageName: "Image 1",
-                                     isFavorite: true,
-                                     ageGroup: .threeToFive,
-                                     category: .fantasy)
-        )
-    }
+#Preview {
+    StoryPlayerView(story: Story(title: "Cinderella",
+                                 audio: "The Adventures of Little Bruno in the Forest",
+                                 imageName: "Image 1",
+                                 isFavorite: true,
+                                 ageGroup: .threeToFive,
+                                 category: .fantasy)
+    )
 }
+
+    
+

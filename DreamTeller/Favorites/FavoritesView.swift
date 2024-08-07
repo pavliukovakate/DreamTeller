@@ -9,10 +9,10 @@ import SwiftUI
 
 struct FavoritesView: View {
     @EnvironmentObject var appConfig: AppConfiguration
-    @StateObject private var viewModel: StoryViewModel
+    @StateObject private var viewModel: CatalogStoriesViewModel
     
     init() {
-        let viewModel = container.resolve(StoryViewModel.self)!
+        let viewModel = container.resolve(CatalogStoriesViewModel.self)!
         _viewModel = StateObject(wrappedValue: viewModel)
     }
     var body: some View {

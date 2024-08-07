@@ -10,7 +10,6 @@ struct MainView: View {
     @EnvironmentObject var appConfig: AppConfiguration
 
     var body: some View {
-        let currentColorSet = appConfig.colorStyle.colorSet
 
         TabView {
             HomeView()
@@ -53,12 +52,11 @@ struct MainView: View {
 
 }
 
-//#Preview {
-//    MainView().environmentObject(AppConfiguration())
-//       
-//}
-//
-//    
+#Preview {
+    MainView().environmentObject(AppConfiguration())
+}
+
+    
 
 
 

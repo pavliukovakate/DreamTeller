@@ -8,13 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		B75179702C458DFA00A20A76 /* StoryPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */; };
-		B75179722C45C1DB00A20A76 /* StoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75179712C45C1DB00A20A76 /* StoryListView.swift */; };
 		B75179742C45C2A200A20A76 /* StoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75179732C45C2A200A20A76 /* StoryCell.swift */; };
 		B75179B02C4840E400A20A76 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75179AF2C4840E400A20A76 /* HomeViewModel.swift */; };
 		B754003B2C3F0A7E00637EEB /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */; };
 		B754003D2C3F2F4D00637EEB /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B754003C2C3F2F4D00637EEB /* Colors.xcassets */; };
 		B75531CA2C516BC700477937 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B75531C92C516BC700477937 /* Swinject */; };
 		B75531CC2C516BE100477937 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75531CB2C516BE100477937 /* Container.swift */; };
+		B75F2C862C639A5400D5F009 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75F2C852C639A5400D5F009 /* FavoritesViewModel.swift */; };
+		B75F2C922C63A19000D5F009 /* BaseStoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75F2C912C63A19000D5F009 /* BaseStoriesViewModel.swift */; };
+		B75F2C942C63A24600D5F009 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75F2C932C63A24600D5F009 /* ProfileViewModel.swift */; };
+		B75F2C962C63A3FD00D5F009 /* AgeGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75F2C952C63A3FD00D5F009 /* AgeGroup.swift */; };
+		B75F2C982C63A41200D5F009 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75F2C972C63A41200D5F009 /* Category.swift */; };
 		B77871562C455513008D5685 /* Assets+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77871542C455513008D5685 /* Assets+Generated.swift */; };
 		B7939BE42C3DCE960092DD6F /* DreamTellerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */; };
 		B7939BE62C3DCE960092DD6F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939BE52C3DCE960092DD6F /* ContentView.swift */; };
@@ -33,7 +37,7 @@
 		B7939C1E2C3DEE090092DD6F /* LearningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C1D2C3DEE090092DD6F /* LearningView.swift */; };
 		B7939C202C3EDA5E0092DD6F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C1F2C3EDA5E0092DD6F /* User.swift */; };
 		B7939C222C3EE9F10092DD6F /* FavoritesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C212C3EE9F10092DD6F /* FavoritesService.swift */; };
-		B7939C242C3EEA160092DD6F /* StoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C232C3EEA160092DD6F /* StoryViewModel.swift */; };
+		B7939C242C3EEA160092DD6F /* CatalogStoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C232C3EEA160092DD6F /* CatalogStoriesViewModel.swift */; };
 		B7939C262C3EEA440092DD6F /* StoryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7939C252C3EEA440092DD6F /* StoryService.swift */; };
 		B7A09F082C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B7A09F072C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 */; };
 /* End PBXBuildFile section */
@@ -57,12 +61,16 @@
 
 /* Begin PBXFileReference section */
 		B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPlayerView.swift; sourceTree = "<group>"; };
-		B75179712C45C1DB00A20A76 /* StoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryListView.swift; sourceTree = "<group>"; };
 		B75179732C45C2A200A20A76 /* StoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryCell.swift; sourceTree = "<group>"; };
 		B75179AF2C4840E400A20A76 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		B754003C2C3F2F4D00637EEB /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		B75531CB2C516BE100477937 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		B75F2C852C639A5400D5F009 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
+		B75F2C912C63A19000D5F009 /* BaseStoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStoriesViewModel.swift; sourceTree = "<group>"; };
+		B75F2C932C63A24600D5F009 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		B75F2C952C63A3FD00D5F009 /* AgeGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroup.swift; sourceTree = "<group>"; };
+		B75F2C972C63A41200D5F009 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		B77871542C455513008D5685 /* Assets+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Assets+Generated.swift"; sourceTree = "<group>"; };
 		B7939BE02C3DCE960092DD6F /* DreamTeller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DreamTeller.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DreamTellerApp.swift; sourceTree = "<group>"; };
@@ -84,7 +92,7 @@
 		B7939C1D2C3DEE090092DD6F /* LearningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningView.swift; sourceTree = "<group>"; };
 		B7939C1F2C3EDA5E0092DD6F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B7939C212C3EE9F10092DD6F /* FavoritesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesService.swift; sourceTree = "<group>"; };
-		B7939C232C3EEA160092DD6F /* StoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewModel.swift; sourceTree = "<group>"; };
+		B7939C232C3EEA160092DD6F /* CatalogStoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogStoriesViewModel.swift; sourceTree = "<group>"; };
 		B7939C252C3EEA440092DD6F /* StoryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryService.swift; sourceTree = "<group>"; };
 		B7A09F072C45329A000D5662 /* The Adventures of Little Bruno in the Forest.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "The Adventures of Little Bruno in the Forest.mp3"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +133,115 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		B75F2C812C63801900D5F009 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				B75531CB2C516BE100477937 /* Container.swift */,
+				B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		B75F2C822C6399C500D5F009 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C152C3DEDC00092DD6F /* HomeView.swift */,
+				B75179AF2C4840E400A20A76 /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B75F2C832C6399D600D5F009 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C172C3DEDD50092DD6F /* CatalogView.swift */,
+				B7939C232C3EEA160092DD6F /* CatalogStoriesViewModel.swift */,
+			);
+			path = Catalog;
+			sourceTree = "<group>";
+		};
+		B75F2C842C6399E400D5F009 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C212C3EE9F10092DD6F /* FavoritesService.swift */,
+				B7939C252C3EEA440092DD6F /* StoryService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		B75F2C872C639A5900D5F009 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C192C3DEDE90092DD6F /* FavoritesView.swift */,
+				B75F2C852C639A5400D5F009 /* FavoritesViewModel.swift */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
+		B75F2C882C639A6700D5F009 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C1B2C3DEDF90092DD6F /* ProfileView.swift */,
+				B75F2C932C63A24600D5F009 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		B75F2C892C639A7100D5F009 /* Learning */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C1D2C3DEE090092DD6F /* LearningView.swift */,
+			);
+			path = Learning;
+			sourceTree = "<group>";
+		};
+		B75F2C8A2C639EF600D5F009 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C0F2C3DD0FE0092DD6F /* ColorScheme.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		B75F2C8B2C639F0D00D5F009 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B7939BE72C3DCE960092DD6F /* Story.swift */,
+				B75F2C952C63A3FD00D5F009 /* AgeGroup.swift */,
+				B75F2C972C63A41200D5F009 /* Category.swift */,
+				B7939C1F2C3EDA5E0092DD6F /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B75F2C8C2C639F7B00D5F009 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */,
+				B75179732C45C2A200A20A76 /* StoryCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B75F2C8D2C639FCC00D5F009 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				B7939C132C3DEBFC0092DD6F /* MainView.swift */,
+				B75F2C912C63A19000D5F009 /* BaseStoriesViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		B75F2C8E2C639FDC00D5F009 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B75F2C812C63801900D5F009 /* Configuration */,
+				B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */,
+				B7939BE52C3DCE960092DD6F /* ContentView.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		B77871552C455513008D5685 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
@@ -156,28 +273,19 @@
 		B7939BE22C3DCE960092DD6F /* DreamTeller */ = {
 			isa = PBXGroup;
 			children = (
-				B7939BE32C3DCE960092DD6F /* DreamTellerApp.swift */,
-				B75531CB2C516BE100477937 /* Container.swift */,
-				B7939BE52C3DCE960092DD6F /* ContentView.swift */,
-				B754003A2C3F0A7E00637EEB /* AppConfiguration.swift */,
-				B7939C132C3DEBFC0092DD6F /* MainView.swift */,
-				B7939C152C3DEDC00092DD6F /* HomeView.swift */,
-				B75179AF2C4840E400A20A76 /* HomeViewModel.swift */,
-				B7939C172C3DEDD50092DD6F /* CatalogView.swift */,
-				B7939C232C3EEA160092DD6F /* StoryViewModel.swift */,
-				B7939C192C3DEDE90092DD6F /* FavoritesView.swift */,
-				B7939C1B2C3DEDF90092DD6F /* ProfileView.swift */,
-				B7939C1D2C3DEE090092DD6F /* LearningView.swift */,
-				B751796F2C458DFA00A20A76 /* StoryPlayerView.swift */,
-				B7939C0F2C3DD0FE0092DD6F /* ColorScheme.swift */,
-				B7939BE72C3DCE960092DD6F /* Story.swift */,
-				B75179712C45C1DB00A20A76 /* StoryListView.swift */,
-				B75179732C45C2A200A20A76 /* StoryCell.swift */,
-				B7939C212C3EE9F10092DD6F /* FavoritesService.swift */,
-				B7939C252C3EEA440092DD6F /* StoryService.swift */,
-				B7939C1F2C3EDA5E0092DD6F /* User.swift */,
+				B75F2C8E2C639FDC00D5F009 /* Application */,
+				B75F2C8D2C639FCC00D5F009 /* Main */,
+				B75F2C822C6399C500D5F009 /* Home */,
+				B75F2C832C6399D600D5F009 /* Catalog */,
+				B75F2C872C639A5900D5F009 /* Favorites */,
+				B75F2C882C639A6700D5F009 /* Profile */,
+				B75F2C892C639A7100D5F009 /* Learning */,
+				B75F2C8C2C639F7B00D5F009 /* Views */,
+				B75F2C8B2C639F0D00D5F009 /* Models */,
+				B75F2C842C6399E400D5F009 /* Services */,
 				B77871552C455513008D5685 /* Generated */,
 				B75400442C3F34C600637EEB /* Resources */,
+				B75F2C8A2C639EF600D5F009 /* Support */,
 				B7939BEB2C3DCE980092DD6F /* Preview Content */,
 			);
 			path = DreamTeller;
@@ -349,7 +457,6 @@
 			files = (
 				B7939C102C3DD0FE0092DD6F /* ColorScheme.swift in Sources */,
 				B7939C162C3DEDC00092DD6F /* HomeView.swift in Sources */,
-				B75179722C45C1DB00A20A76 /* StoryListView.swift in Sources */,
 				B75179B02C4840E400A20A76 /* HomeViewModel.swift in Sources */,
 				B7939C1C2C3DEDF90092DD6F /* ProfileView.swift in Sources */,
 				B7939C182C3DEDD50092DD6F /* CatalogView.swift in Sources */,
@@ -357,10 +464,15 @@
 				B7939C1E2C3DEE090092DD6F /* LearningView.swift in Sources */,
 				B75179702C458DFA00A20A76 /* StoryPlayerView.swift in Sources */,
 				B75531CC2C516BE100477937 /* Container.swift in Sources */,
-				B7939C242C3EEA160092DD6F /* StoryViewModel.swift in Sources */,
+				B7939C242C3EEA160092DD6F /* CatalogStoriesViewModel.swift in Sources */,
 				B7939BE62C3DCE960092DD6F /* ContentView.swift in Sources */,
+				B75F2C962C63A3FD00D5F009 /* AgeGroup.swift in Sources */,
+				B75F2C922C63A19000D5F009 /* BaseStoriesViewModel.swift in Sources */,
+				B75F2C862C639A5400D5F009 /* FavoritesViewModel.swift in Sources */,
 				B7939BE82C3DCE960092DD6F /* Story.swift in Sources */,
 				B7939C202C3EDA5E0092DD6F /* User.swift in Sources */,
+				B75F2C982C63A41200D5F009 /* Category.swift in Sources */,
+				B75F2C942C63A24600D5F009 /* ProfileViewModel.swift in Sources */,
 				B75179742C45C2A200A20A76 /* StoryCell.swift in Sources */,
 				B754003B2C3F0A7E00637EEB /* AppConfiguration.swift in Sources */,
 				B7939C262C3EEA440092DD6F /* StoryService.swift in Sources */,

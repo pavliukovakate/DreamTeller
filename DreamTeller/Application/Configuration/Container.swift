@@ -20,10 +20,10 @@ let container: Container = {
         MockStoryService()
     }
     
-    container.register(StoryViewModel.self) { resolver in
+    container.register(CatalogStoriesViewModel.self) { resolver in
         let storyService = resolver.resolve(StoryService.self)!
         let favoritesService = resolver.resolve(FavoritesService.self)!
-        return StoryViewModel(storyService: storyService, favoritesService: favoritesService)
+        return CatalogStoriesViewModel(storyService: storyService, favoritesService: favoritesService)
     }
     
     container.register(HomeViewModel.self) { resolver in
